@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SuperJamey - Developer & Creative</title>
+    <title>Jamey vs Cancer</title>
     <style>
         * {
             margin: 0;
@@ -15,6 +15,7 @@
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
             line-height: 1.6;
             color: #333;
+            background: #f4f4f6;
         }
 
         /* Navigation */
@@ -71,11 +72,38 @@
             margin-bottom: 1rem;
         }
 
+        .hero h2 {
+            font-size: 1.6rem;
+            margin-bottom: 1rem;
+            opacity: 0.95;
+        }
+
         .hero p {
-            font-size: 1.3rem;
+            font-size: 1.2rem;
             opacity: 0.9;
-            max-width: 600px;
-            margin: 0 auto;
+            max-width: 700px;
+            margin: 0.5rem auto 0;
+        }
+
+        .hero .cta {
+            margin-top: 2rem;
+        }
+
+        .hero .cta a {
+            display: inline-block;
+            padding: 0.8rem 1.6rem;
+            border-radius: 999px;
+            background: #ffffff;
+            color: #764ba2;
+            font-weight: 600;
+            text-decoration: none;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .hero .cta a:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.2);
         }
 
         /* Container */
@@ -90,245 +118,190 @@
             padding: 4rem 2rem;
         }
 
-        section:nth-child(even) {
+        section:nth-of-type(even) {
             background: #f8f9fa;
         }
 
         section h2 {
-            font-size: 2.5rem;
-            margin-bottom: 2rem;
+            font-size: 2.2rem;
+            margin-bottom: 1.5rem;
             text-align: center;
             color: #2c3e50;
         }
 
-        /* Projects Grid */
-        .projects-grid {
+        section p {
+            max-width: 800px;
+            margin: 0.5rem auto;
+            font-size: 1.05rem;
+        }
+
+        /* Two-column layout */
+        .two-column {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 2rem;
             margin-top: 2rem;
         }
 
-        .project-card {
+        .card {
             background: white;
             padding: 2rem;
             border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.08);
         }
 
-        .project-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 12px rgba(0,0,0,0.15);
-        }
-
-        .project-card h3 {
+        .card h3 {
+            margin-bottom: 0.8rem;
             color: #667eea;
-            margin-bottom: 1rem;
         }
 
-        .project-card .tech-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-            margin-top: 1rem;
-        }
-
-        .tech-tag {
-            background: #e9ecef;
-            padding: 0.25rem 0.75rem;
-            border-radius: 15px;
-            font-size: 0.85rem;
-            color: #495057;
-        }
-
-        .project-link {
-            display: inline-block;
-            margin-top: 1rem;
-            color: #667eea;
-            text-decoration: none;
-            font-weight: 600;
-        }
-
-        .project-link:hover {
-            text-decoration: underline;
-        }
-
-        /* Hobbies Section */
-        .hobbies-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-
-        .hobby-card {
-            text-align: center;
-            padding: 2rem;
-        }
-
-        .hobby-icon {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-        }
-
-        .hobby-card h3 {
+        .card p {
             margin-bottom: 0.5rem;
-            color: #2c3e50;
         }
 
-        /* About Section */
-        .about-content {
-            max-width: 800px;
-            margin: 0 auto;
-            font-size: 1.1rem;
-            line-height: 1.8;
+        /* 9am Project "ad" */
+        .ad-block {
+            border-left: 4px solid #667eea;
+            padding-left: 1rem;
         }
 
         /* Footer */
         footer {
-            background: #2c3e50;
-            color: white;
             text-align: center;
             padding: 2rem;
+            font-size: 0.9rem;
+            color: #777;
         }
 
-        .social-links {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            margin-top: 1rem;
-        }
-
-        .social-links a {
-            color: white;
+        footer a {
+            color: #667eea;
             text-decoration: none;
-            font-size: 1.2rem;
         }
 
-        /* Responsive */
-        @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2rem;
-            }
-            
-            nav ul {
-                gap: 1rem;
-            }
-            
-            section h2 {
-                font-size: 2rem;
-            }
+        footer a:hover {
+            text-decoration: underline;
         }
     </style>
 </head>
 <body>
+    <!-- Navigation -->
     <nav>
         <div class="container">
-            <div class="logo">SuperJamey</div>
+            <div class="logo">Jamey vs Cancer</div>
             <ul>
-                <li><a href="#about">About</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#hobbies">Hobbies</a></li>
+                <li><a href="#journey">My Journey</a></li>
+                <li><a href="#updates">Updates</a></li>
+                <li><a href="#nineam">9am Project</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </div>
     </nav>
 
-    <section class="hero">
-        <h1>Hi, I'm Jamey</h1>
-        <p>Developer, painter, kayaker, and lifelong learner exploring the intersection of technology and creativity.</p>
-    </section>
+    <!-- Hero -->
+    <header class="hero">
+        <h1>Fighting Forward</h1>
+        <h2>Liver transplant survivor. Chronic kidney disease. Now facing lung cancer head‑on.</h2>
+        <p>
+            This site is the home base for my cancer journey — the real story, the hard days, the hopeful days,
+            and the moments that remind me why I keep pushing.
+        </p>
+        <div class="cta">
+            <a href="#updates">Read the latest update</a>
+        </div>
+    </header>
 
-    <section id="about">
-        <div class="container">
-            <h2>About Me</h2>
-            <div class="about-content">
-                <p>I'm a developer passionate about building interactive web applications and exploring data through code. When I'm not programming, you'll find me with a paintbrush in hand or paddling through local waterways.</p>
-                <p>Active development has continued on other projects and the new version of this site is underway.</p>
+    <!-- My Journey -->
+    <section id="journey">
+        <h2>My Cancer Journey</h2>
+        <p>
+            Cancer isn’t just a diagnosis. It’s a daily reality that sits on top of everything else I’ve already been through:
+            a liver transplant that saved my life, and chronic kidney disease that I manage every day.
+        </p>
+        <p>
+            Here, I share what it’s really like to live with lung cancer — the treatments, the scans, the pain,
+            the small wins, and the mental game of getting up and facing it again and again.
+        </p>
+
+        <div class="two-column">
+            <div class="card">
+                <h3>Liver Transplant</h3>
+                <p>
+                    My journey didn’t start with cancer. A liver transplant changed everything and gave me more time.
+                    That experience still shapes how I see every new challenge.
+                </p>
+            </div>
+            <div class="card">
+                <h3>Chronic Kidney Disease</h3>
+                <p>
+                    CKD is a constant background process — labs, numbers, and choices. It’s part of the story,
+                    and it makes every treatment decision more complicated.
+                </p>
+            </div>
+            <div class="card">
+                <h3>Lung Cancer</h3>
+                <p>
+                    Now I’m facing lung cancer. This site focuses on that fight: scans, treatments, side effects,
+                    and the emotional weight that comes with it.
+                </p>
             </div>
         </div>
     </section>
 
-    <section id="projects">
+    <!-- Updates -->
+    <section id="updates">
+        <h2>Updates & Reflections</h2>
+        <p>
+            I use this space to go deeper than a quick status post — to talk about what appointments are like,
+            how PET scans feel from the inside, what the pain is really like, and how I’m coping day to day.
+        </p>
+        <p>
+            Over time, this will grow into a timeline of where I’ve been and how I’ve kept moving forward.
+            For shorter, more frequent updates, you can follow my Facebook page: <strong>“Jamey vs Cancer”</strong>.
+        </p>
+    </section>
+
+    <!-- 9am Project "Ad" -->
+    <section id="nineam">
+        <h2>The 9am Project</h2>
         <div class="container">
-            <h2>Programming Projects</h2>
-            <div class="projects-grid">
-                <div class="project-card">
-                    <h3>Interactive Streamlit Apps</h3>
-                    <p>A collection of data visualization and interactive applications built with Python and Streamlit.</p>
-                    <div class="tech-tags">
-                        <span class="tech-tag">Python</span>
-                        <span class="tech-tag">Streamlit</span>
-                        <span class="tech-tag">Pandas</span>
-                    </div>
-                    <a href="https://superjamey.streamlit.app" class="project-link">View Live Demo →</a>
-                </div>
-
-                <div class="project-card">
-                    <h3>Automated Python Tips Bot</h3>
-                    <p>Daily Python tips automatically generated using AI and posted to X. Runs on a scheduled task via PythonAnywhere, combining LangChain with Google's Gemini model to create educational content.</p>
-                    <h6>Content subject to change</h6>
-                    <div class="tech-tags">
-                        <span class="tech-tag">Python</span>
-                        <span class="tech-tag">LangChain</span>
-                        <span class="tech-tag">Google Gemini</span>
-                        <span class="tech-tag">PythonAnywhere</span>
-                        <Span class="tech-tag">Tweepy</span>
-
-                    </div>
-                    <a href="https://x.com/_JLaMar" class="project-link">View on X →</a>
-                </div>
-
-                <div class="project-card">
-                    <h3>Project Title</h3>
-                    <p>Another project description. You can add as many project cards as you need.</p>
-                    <div class="tech-tags">
-                        <span class="tech-tag">Python</span>
-                        <span class="tech-tag">Flask</span>
-                    </div>
-                    <a href="#" class="project-link">View on GitHub →</a>
-                </div>
+            <div class="card ad-block">
+                <h3>A Little Light in the Middle of the Fight</h3>
+                <p>
+                    Life isn’t only cancer. Every day at <strong>9am</strong>, I take a moment to notice something good —
+                    something small, something funny, something worth holding onto.
+                </p>
+                <p>
+                    The 9am Project is my personal “commercial break” from the heavy stuff. You might see these moments
+                    pop up as side notes, photos, or short reflections. They’re reminders that even in the middle of
+                    treatment and pain, there’s still something worth noticing.
+                </p>
             </div>
         </div>
     </section>
 
-    <section id="hobbies">
-        <div class="container">
-            <h2>Beyond Code</h2>
-            <div class="hobbies-grid">
-                <div class="hobby-card">
-                    <div class="hobby-icon">🎨</div>
-                    <h3>Painting</h3>
-                    <p>Exploring color, form, and expression through various painting techniques and styles.</p>
-                </div>
-
-                <div class="hobby-card">
-                    <div class="hobby-icon">🛶</div>
-                    <h3>Kayaking</h3>
-                    <p>Finding peace and adventure on the water, exploring rivers and coastlines.</p>
-                </div>
-
-                <div class="hobby-card">
-                    <div class="hobby-icon">📚</div>
-                    <h3>Lifelong Learning</h3>
-                    <p>Always curious, always growing. Currently refreshing web development and exploring new technologies.</p>
-                </div>
-            </div>
-        </div>
+    <!-- Contact -->
+    <section id="contact">
+        <h2>Stay Connected</h2>
+        <p>
+            If you want to reach out, share your own story, or just say hi:
+        </p>
+        <p>
+            <strong>Email:</strong> <a href="mailto:jameystrong@gmail.com">jameystrong@gmail.com</a><br>
+            <strong>Facebook:</strong> Jamey vs Cancer
+        </p>
+        <p>
+            Thanks for being here. It means more than you know.
+        </p>
     </section>
 
-    <footer id="contact">
-        <div class="container">
-            <p>Let's connect!</p>
-            <div class="social-links">
-                <a href="https://github.com/SuperJamey" target="_blank">GitHub</a>
-                <a href="https://x.com/_JLaMar" target="_blank">X</a>
-                <a href="mailto:superjamey@gmail.com">Email</a>
-                <a href="https://linkedin.com/in/jameylamar4805" target="_blank">LinkedIn</a>
-            </div>
-            <p style="margin-top: 2rem; opacity: 0.8;">© 2024 SuperJamey. Built with care.</p>
-        </div>
+    <!-- Footer -->
+    <footer>
+        &copy; <span id="year"></span> Jamey vs Cancer · Hosted at superjamey.com
     </footer>
+
+    <script>
+        // Set current year in footer
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
 </body>
 </html>
