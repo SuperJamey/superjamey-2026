@@ -1,0 +1,49 @@
+/* --- Memorial Page --- */
+
+.memory-page {
+    background: url('memory-photos/background.jpg') no-repeat center center fixed;
+    background-size: cover;
+    text-align: center;
+    color: white;
+    padding: 4rem 2rem;
+    min-height: 100vh;
+    font-family: "Georgia", serif;
+}
+
+.memorial-container {
+    max-width: 600px;
+    margin: 0 auto;
+    background: rgba(0,0,0,0.35);
+    padding: 2rem;
+    border-radius: 12px;
+    backdrop-filter: blur(4px);
+}
+
+.memorial-photo {
+    width: 250px;
+    height: auto;
+    border-radius: 12px;
+    margin: 1.5rem 0;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+}
+
+.memorial-name {
+    font-size: 2rem;
+    margin-top: 1rem;
+}
+
+.memorial-years {
+    font-size: 1.4rem;
+    opacity: 0.9;
+}
+
+/* Hidden page counter */
+.page-counter {
+    position: fixed;
+    bottom: 8px;
+    right: 12px;
+    font-size: 0.75rem;
+    opacity: 0.25;
+    color: white;
+    pointer-events: none;
+}
