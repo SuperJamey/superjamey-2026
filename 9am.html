@@ -14,11 +14,36 @@
 <section id="origins">
     <h2>9am Origins</h2>
     <p>
-        The 9am Project began as a simple idea: capture the world at the same moment every day.
+        One morning, while making a delivery for RiverBend Food Bank, I ended up in Annawan Illinois. 
+        I was waiting for someone to meet me for the pickup, as the address I was dispatched to was 
+        incorrect. I got bored while waiting, and saw these big silos in the distance. 
+        I took a picture. A few days later I took another photo at another location. It just happened
+        to be 9am.<br>
+        The 9am Project began as a simple idea: capture the world at the same moment every day, at 9am!
         Originally, it focused on photographing silos — tall, quiet structures that stand against
         the sky like markers of time. What started as a creative experiment slowly became a ritual,
         a way to pause, breathe, and notice the world.
     </p>
+
+    <div class="carousel">
+    <button class="carousel-btn left">&#10094;</button>
+
+    <div class="carousel-track">
+        <img src="images/silo1.jpg" alt="Silo 1">
+        <img src="images/silo2.jpg" alt="Silo 2">
+        <img src="images/silo3.jpg" alt="Silo 3">
+        <img src="images/silo4.jpg" alt="Silo 4">
+        <img src="images/silo5.jpg" alt="Silo 5">
+        <img src="images/silo6.jpg" alt="Silo 6">
+        <img src="images/silo7.jpg" alt="Silo 7">
+        <img src="images/silo8.jpg" alt="Silo 8">
+        <!-- Add more images as needed -->
+        
+    </div>
+    <p><b>Some of the original 9am photos.</b></p>
+    <button class="carousel-btn right">&#10095;</button>
+</div>
+
 </section>
 
 <section id="gallery">
@@ -32,6 +57,35 @@
     <h2>Coming Soon</h2>
     <p>New photos will be added here — indoor, outdoor, outer space, anything that fits the spirit of 9am.</p>
 </section>
+
+
+<script>
+    const track = document.querySelector('.carousel-track');
+    const images = Array.from(track.children);
+    const leftBtn = document.querySelector('.carousel-btn.left');
+    const rightBtn = document.querySelector('.carousel-btn.right');
+
+    let index = 0;
+
+    function updateCarousel() {
+        const width = images[0].getBoundingClientRect().width;
+        track.style.transform = `translateX(-${index * width}px)`;
+    }
+
+    rightBtn.addEventListener('click', () => {
+        index = (index + 1) % images.length;
+        updateCarousel();
+    });
+
+    leftBtn.addEventListener('click', () => {
+        index = (index - 1 + images.length) % images.length;
+        updateCarousel();
+    });
+
+    window.addEventListener('resize', updateCarousel);
+</script>
+
+
 
 </body>
 </html>
